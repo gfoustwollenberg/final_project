@@ -1,5 +1,26 @@
 """
-
+Name : main.py
+Author: Gabrielle Foust-Wollenberg
+Created : 04/30/2024
+Course: CIS 152 - Data Structure
+Version: 1.0
+OS: Windows 11
+IDE: PyCharm 2023.3
+Copyright : This is my own original work
+based on specifications issued by our instructor
+Description : This code demonstrates the use of GUI, priority queues, and
+              linked lists by obtaining information from users wanting to
+              sign up for medicare plans and adding them to the queue and
+              list for administrative use later.
+            Input: User is responsible for adding their name, dob, and ssn.
+            Output: Output includes messagebox letting the user know that
+                    their entry in the queue and list is complete and lets
+                    them know how large the queue is at that moment so they
+                    can have awareness of how long it will take to be contacted.
+Academic Honesty: I attest that this is my original work.
+I have not used unauthorized source code, either modified or
+unmodified. I have not given other fellow student(s) access
+to my program.
 """
 
 from tkinter import *
