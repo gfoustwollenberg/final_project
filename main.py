@@ -46,8 +46,8 @@ def submit():
     profile_list.insert(profile)
     plan_request = PlanNode(user)
     queue.enqueue(plan_request)
-    print(profile_list.size())
-    print(queue.size())
+    print("Person List Size: ", profile_list.size())
+    print("Priority Queue Length: ", queue.size())
     messagebox.showinfo(title='Plan Request Status', message='Your application has been submitted successfully. '
                                                              'Please clear the box and close the window if you are '
                                                              'done or submit your next application.')
