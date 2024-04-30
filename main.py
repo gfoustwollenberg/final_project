@@ -44,7 +44,7 @@ def submit():
     user = Person(first_name, last_name, dob, ssn)
     profile = (PersonNode(user))
     profile_list.insert(profile)
-    plan_request = PlanNode(user)
+    plan_request = PlanNode(user, plan_priority)
     queue.enqueue(plan_request)
     print("Person List Size: ", profile_list.size())
     print("Priority Queue Length: ", queue.size())
