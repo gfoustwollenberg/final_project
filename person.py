@@ -1,4 +1,5 @@
 class Person:
+    # constructor for person class which also validates input from all fields
     def __init__(self, f_name="John", l_name='Doe', dob='01/01/1900', ssn='999-99-9996'):
         name_characters = set("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'-")
         dob_characters = set("0123456789/")
@@ -14,6 +15,7 @@ class Person:
         self.dob = dob
         self.ssn = ssn
 
+    # print function in case return of information is needed
     def __str__(self):
         return (f'First Name: {self.f_name}, Last Name: {self.l_name}, Date of Birth: {self.dob}, '
                 f'SSN: {self.ssn}')
