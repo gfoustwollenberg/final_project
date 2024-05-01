@@ -23,6 +23,7 @@ unmodified. I have not given other fellow student(s) access
 to my program.
 """
 
+# imports necessary GUI materials and classes from different pages in the folder
 from tkinter import *
 from tkinter import messagebox
 
@@ -30,11 +31,13 @@ from medicare_plan_queue import PlanPriorityQueue, PlanNode
 from person import Person
 from person_linked_list import PersonNode, PersonLinkedList
 
-
+# initializes the linked list and priority queue so all applicants can add to the same list and queue
 profile_list = PersonLinkedList()
 queue = PlanPriorityQueue()
 
 
+# submit function obtains all info added to the gui, initializes the person class instance, each node's instance,
+# adds person to the list and queue, and issues the message box for successful submission
 def submit():
     first_name = f_name_entry.get()
     last_name = l_name_entry.get()
@@ -53,6 +56,7 @@ def submit():
                                                              'done or submit your next application.')
 
 
+# clear function resets all fields
 def clear():
     f_name_entry.delete(0, END)
     l_name_entry.delete(0, END)
@@ -62,11 +66,13 @@ def clear():
 
 
 if __name__ == "__main__":
+    # initializes GUI window, sets size, background, and title
     window = Tk()
     window.geometry("600x600")
     window.title("Medicare Plan Application")
     window.config(background="white")
 
+    # creates entry fields for first name, last name, dob, and ssn
     f_name_entry = Entry(window, font=("Arial", 18), bg="white", fg="black", width=205)
     f_name_entry.insert(0, 'First Name (letters or hyphen only)')
     f_name_entry.pack()
@@ -80,12 +86,14 @@ if __name__ == "__main__":
     ssn_entry.insert(0, 'Social Security Number (numbers and - only)')
     ssn_entry.pack()
 
+    # creates radio buttons for each plan option
     x = IntVar()
     plan_list = ["Medicare Advantage Plan", "PACE Plan"]
     for index in range(len(plan_list)):
         radio_entry = Radiobutton(window, text=plan_list[index], variable=x, value=index+1, font=("Arial", 18))
         radio_entry.pack(anchor=CENTER)
 
+    # creates submit and clear buttons
     submit_button = Button(window, text="Submit", command=submit, font=("Arial", 24), fg="black", bg="white",
                            activeforeground="black", activebackground="white")
     submit_button.pack()
